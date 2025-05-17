@@ -1,0 +1,28 @@
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(50),
+    DeptNo INT,
+    Salary NUMBER(8,2)
+);
+
+
+INSERT INTO Employee (EmpID, EmpName, DeptNo, Salary) 
+VALUES (1, 'Ali', 10, 1000);
+INSERT INTO Employee (EmpID, EmpName, DeptNo, Salary)
+ VALUES (2, 'Sara', 10, 200);
+INSERT INTO Employee (EmpID, EmpName, DeptNo, Salary) 
+VALUES (3, 'Ahmed', 20, 550);
+INSERT INTO Employee (EmpID, EmpName, DeptNo, Salary)
+ VALUES (4, 'Reem', 20, 1300);
+INSERT INTO Employee (EmpID, EmpName, DeptNo, Salary) 
+VALUES (5, 'Said', 30, 2000);
+
+
+SELECT * FROM Employee;
+
+
+SELECT DeptNo,
+       COUNT(*) AS EmployeeCount,
+       AVG(Salary) AS AvgSalary
+FROM Employee
+GROUP BY DeptNo;
